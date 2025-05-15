@@ -1,22 +1,38 @@
-# Writing requirements.txt for RL-VLM-F with Genesis
-requirements = """
-numpy>=1.20
-torch>=1.11
-gym>=0.21.0
-genesis-envs>=0.1.0
-metaworld>=2.0.0
-hydra-core>=1.1.0
-opencv-python>=4.5.0
-Pillow>=8.0.0
-moviepy>=1.0.3
-scikit-image>=0.18.0
-rlkit>=0.0.1
-transformers>=4.0.0
-torchvision>=0.12.0
-tqdm>=4.60.0
-PyYAML>=5.4.0
-"""
-path = '/mnt/data/requirements.txt'
-with open(path, 'w') as f:
-    f.write(requirements.strip() + '\n')
-path
+absl-py
+pyparsing
+
+cmake==3.26.4
+
+matplotlib
+scikit-image
+tqdm
+moviepy
+shapely
+pandas==2.1.4
+PyOpenGL==3.1.7
+glfw==1.11.2
+gym==0.25.2
+gymnasium==0.29.1
+mujoco==3.1.1
+
+pybind11==2.10.4
+pybind11-global==2.10.4
+
+chardet
+termcolor
+tb-nightly
+imageio
+imageio-ffmpeg
+ftfy
+regex
+pyquaternion
+pygame
+
+hydra-core @ git+https://github.com/facebookresearch/hydra.git@0.11_branch#egg=hydra-core
+git+https://github.com/openai/CLIP.git#egg=CLIP
+salesforce-lavis
+openai==1.3.5
+google-generativeai
+
+genesis>=0.2,<0.3
+
