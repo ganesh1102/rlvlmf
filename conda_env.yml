@@ -1,37 +1,56 @@
 name: rlvlmf
 channels:
+  - conda-forge
   - defaults
 dependencies:
+  # Python runtime
   - python=3.9
-  - absl-py
-  - pyparsing
+  
+  # Core utilities
   - pip
+  - cmake=3.26.4
+  - git
+  
+  # GPU support (pick the right CUDA toolkit version)
+  - cudatoolkit=11.8    # or 12.1, as needed
+  - cudnn=8.6           # match to cudatoolkit
+  
+  # Common scientific/graphics libs
+  - matplotlib
+  - pandas=2.1.4
+  - scikit-image
+  - tqdm
+  - imageio
+  - imageio-ffmpeg
+  - moviepy
+  - shapely
+  - pyopengl=3.1.7
+  - glfw=1.11.2
+  
+  # Reinforcement-learning environments
+  - gymnasium=0.29.1    # replaces gym
+  - mujoco=3.1.1
+  
+  # Build tools
+  - pybind11=2.10.4
+  - pybind11_global=2.10.4
+  
+  # Optionally install hydra from conda-forge rather than GitHub
+  - hydra-core=1.4.2    # or latest available on conda-forge
+
+  # Any other conda-available deps for Genesis go here…
+  
+  # Pip installs for anything not on conda
   - pip:
-    - chardet  
+    - chardet
     - termcolor
     - tb-nightly
-    - imageio
-    - imageio-ffmpeg
-    - git+https://github.com/facebookresearch/hydra@0.11_branch
-    - matplotlib
-    - scikit-image
-    - tqdm
-    - moviepy
-    - shapely
-    - gym==0.25.2
-    - ftfy 
-    - regex 
+    - git+https://github.com/facebookresearch/hydra@0.11_branch  # if you really need this version
+    - ftfy
+    - regex
     - git+https://github.com/openai/CLIP.git
     - salesforce-lavis
     - openai==1.3.5
     - google-generativeai
     - pyquaternion
     - pygame
-    - glfw==1.11.2
-    - gymnasium==0.29.1
-    - pandas==2.1.4
-    - pyopengl==3.1.7
-    - mujoco==3.1.1
-    - pybind11==2.10.4
-    - pybind11-global==2.10.4
-    - cmake==3.26.4
